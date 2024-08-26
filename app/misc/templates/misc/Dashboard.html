@@ -2,19 +2,15 @@
 
 {% load static %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}Agenda | Dashboard{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="container-fluid py-4">
     <h2>Dashboard</h2>
-    <div>
-        <div class="col-lg-8 col-md-6 col-12">
-            <div class="card">
-                <div class="card-body">
-    </div>
+</div>
+    <!-- Card Chart -->
     <div class="row">
-        <div class="col-md-12">
-            <!-- Fake Chart -->
+        <div class="col-12">
             <div class="card z-index-2">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
                     <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
@@ -24,44 +20,13 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <h6 class="mb-0">Completed Tasks</h6>
-                    <p class="text-sm">Last Campaign Performance</p>
+                    <h6 class="mb-0">Tarefas Concluídas</h6>
+                    <p class="text-sm">Seu Desempenho</p>
                     <hr class="dark horizontal">
                     <div class="d-flex">
                         <i class="material-icons text-sm my-auto me-1">schedule</i>
-                        <p class="mb-0 text-sm">just updated</p>
+                        <p class="mb-0 text-sm">Última atualização</p>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <!-- Table -->
-            <div class="card">
-                <div class="card-header">
-                    <h5>Table</h5>
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Example 1</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Example 2</td>
-                                <td>200</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
@@ -70,17 +35,14 @@
 
 <script src="{% static 'assets/js/plugins/chartjs.min.js' %}"></script>
 <script>
-    
     var ctx = document.getElementById("chart-line-tasks").getContext("2d");
 
     var gradientStroke1 = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
     gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
     gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)');
 
     var gradientStroke2 = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
     gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
     gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)');
@@ -90,7 +52,7 @@
         data: {
             labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             datasets: [{
-                label: "Mobile apps",
+                label: "Tarefas Concluídas",
                 tension: 0.4,
                 borderWidth: 0,
                 pointRadius: 0,
@@ -102,7 +64,7 @@
                 maxBarThickness: 6
 
             }, {
-                label: "Websites",
+                label: "Tarefas Pendentes",
                 tension: 0.4,
                 borderWidth: 0,
                 pointRadius: 0,
@@ -122,7 +84,37 @@
     });
 </script>
 
-</body>
-</html>
-
+    <!-- Card Table -->
+    <div class="row mb-4 mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Últimos Eventos</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Data Ínicio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Example 1</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Example 2</td>
+                                <td>200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

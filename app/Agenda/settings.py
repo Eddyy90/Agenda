@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'misc',
+    'user_calendar',
 ]
 
 MIDDLEWARE = [

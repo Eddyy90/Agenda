@@ -4,7 +4,7 @@
 {% load static %}
 <head>
     <meta charset="utf-8" />
-    <title>{% block title %}Dashboard{% endblock %}</title>
+    <title>{% block title %}Agenda{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- FAVICON -->
@@ -14,7 +14,13 @@
     <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
     <link href="{% static 'assets/css/nucleo-svg.css' %}" rel="stylesheet" />
     <link id="pagestyle" href="{% static 'assets/css/material-dashboard.css' %}" rel="stylesheet" />
-    <link href="{% static 'assets/css/material-dashboard.min.css' %}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+
+
+
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -39,3 +45,6 @@
     <script src="{% static 'assets/js/material-dashboard.min.js' %}"></script>
 
     {% block extra_js %}{% endblock %}
+
+</body>
+</html>
